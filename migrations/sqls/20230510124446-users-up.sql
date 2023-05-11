@@ -1,0 +1,10 @@
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj1@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Lina','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Riay','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Tappu','Nayan','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','PAtil','raj123@gmail.com','Surat');
+INSERT INTO users (firstName, lastName, email, city) VALUES ('Raj','Patel','raj123@gmail.com','Surat');

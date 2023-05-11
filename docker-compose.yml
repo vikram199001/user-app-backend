@@ -1,0 +1,40 @@
+version: '3.8'
+
+services: 
+  mysql:
+    image: "mysql:5.7"
+    hostname: mysql
+    restart: always
+    env_file: ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    ports:
+      - $MYSQL_DOCKER_PORT:$MYSQL_LOCAL_PORT
+    volumes: 
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+      - ./db/backup/files/:/data_backup/data
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - mysql:db
+    ports:
+      - "8081:80"
+  app:
+    build: ./
+    restart: on-failure      
+    ports: 
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - WAIT_HOSTS=mysql:$MYSQL_LOCAL_PORT
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+    depends_on:
+      - mysql
+      - phpmyadmin        
+  
+volumes: 
+  db-config:
+  db-data:
